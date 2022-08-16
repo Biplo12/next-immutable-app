@@ -5,7 +5,6 @@ import styles from "../styles/Navbar.module.scss";
 import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>

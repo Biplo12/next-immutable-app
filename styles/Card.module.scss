@@ -38,6 +38,7 @@
   width: auto;
   height: auto;
   min-width: 600px;
+  max-height: 95%;
   position: fixed;
   border-radius: 20px;
   top: 50%;
@@ -48,20 +49,31 @@
   align-items: center;
   flex-direction: column;
   color: white;
-  padding: 1rem 3rem;
+  padding: 3rem 2rem;
   z-index: 999;
   background-color: #112d3d;
   box-shadow: 0px 0px 20px -20px rgb(0, 0, 0);
-  .windowLeft {
+  p {
+    margin: 0;
+  }
+  .windowTop {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    p {
+      width: 80%;
+    }
   }
-  .windowRight {
+  .windowBottom {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    .etnity,
+    .stats {
+      min-height: 200px;
+    }
   }
 }

@@ -3,15 +3,21 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.scss";
 import Cards from "../components/Cards";
 import { useState } from "react";
+
 const link =
-  "https://api.x.immutable.com/v1/assets?page_size=9&collection=0xacb3c6a43d15b907e8433077b6d38ae40936fe2c";
+  "https://api.x.immutable.com/v1/assets?page_size=30&collection=0xacb3c6a43d15b907e8433077b6d38ae40936fe2c";
+
 export default function Home({ data }) {
   const [nextCursor, setNextCursor] = useState(data.cursor);
   const [prevCursor, setPrevCursor] = useState("");
+  const [pageCursor, setPageCursor] = useState(data.cursor);
   const [newData, setNewData] = useState(data);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+
   const nextPageHandler = async () => {
+    setPrevCursor(pageCursor);
+    setPageCursor(nextCursor);
     setLoading(true);
     const response = await fetch(`${link}&cursor=${nextCursor}`, {
       method: "GET",
@@ -30,10 +36,13 @@ export default function Home({ data }) {
     setNextCursor(response.cursor);
     setPage((prev) => prev + 1);
   };
+
   const prevPageHandler = async () => {
+    setPrevCursor(pageCursor);
+    setPageCursor(nextCursor);
     setLoading(true);
     const response = await fetch(
-      `${link}&cursor=${page === 2 ? "" : data.cursor}`,
+      `${link}&cursor=${page === 2 ? "" : prevCursor}`,
       {
         method: "GET",
         headers: {

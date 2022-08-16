@@ -5,10 +5,12 @@ import styles from "../styles/Card.module.scss";
 const Cards = ({ newData }) => {
   const [window, setWindow] = useState(false);
   const [cardDetails, setCardDetails] = useState("");
+  const [isImageLoading, setIsImageLoading] = useState(true);
   const handlewindow = (metadata) => {
     setWindow(!window);
     setCardDetails(metadata);
   };
+
   return (
     <>
       {newData.result?.map((d) => {
@@ -31,7 +33,7 @@ const Cards = ({ newData }) => {
                 {window && (
                   <>
                     <h1>{cardDetails.name}</h1>
-                    <div className={styles.windowLeft}>
+                    <div className={styles.windowTop}>
                       {!cardDetails.image ? (
                         ""
                       ) : (
@@ -42,8 +44,9 @@ const Cards = ({ newData }) => {
                           alt="card"
                         />
                       )}
+                      <p>{cardDetails.effect}</p>
                     </div>
-                    <div className={styles.windowRight}>
+                    <div className={styles.windowBottom}>
                       <div className={styles.etnity}>
                         <h2>Origin: </h2>
                         <p>God: {cardDetails.god}</p>
