@@ -73,7 +73,7 @@ export default function Home({ data }) {
             <button disabled={page === 1} onClick={() => prevPageHandler()}>
               Previous page
             </button>
-            <p>{page}</p>
+            <p>{page} / 200+</p>
             <button
               disabled={newData.remaining === 0}
               onClick={() => nextPageHandler()}

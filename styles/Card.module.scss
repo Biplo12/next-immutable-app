@@ -4,7 +4,15 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-color: #112d3d;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0px 0px 40px -10px rgb(0, 0, 0);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 40px -10px rgb(255, 255, 255);
+  }
   .card h1 {
     margin: 0;
   }
@@ -39,10 +47,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: black;
+  color: white;
   padding: 1rem 3rem;
   z-index: 999;
-  background-color: white;
+  background-color: #112d3d;
+  box-shadow: 0px 0px 20px -20px rgb(0, 0, 0);
   .windowLeft {
     display: flex;
     flex-direction: column;

@@ -10,7 +10,7 @@ const About = () => {
         <h2>Created using Next.js + ImmutableX API + SASS</h2>
         <h3>
           This project is created as recruitment task for company named
-          <b>ANFATA GAMES sp. z o.o.</b>
+          <b> ANFATA GAMES sp. z o.o.</b>
         </h3>
       </div>
     </>

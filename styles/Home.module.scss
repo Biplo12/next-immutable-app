@@ -2,7 +2,6 @@
   width: 100%;
   height: auto;
   padding: 1rem;
-
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
@@ -22,7 +21,8 @@
       color: white;
       cursor: pointer;
       border: 1px solid #16b4cc;
-      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      padding: 1rem 2rem;
       transition: 0.1s ease-in-out;
       &:hover {
         background-color: #16b4cc;

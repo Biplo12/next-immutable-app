@@ -5,6 +5,7 @@ import styles from "../styles/Navbar.module.scss";
 import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
+  console.log(router.pathname);
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
@@ -22,14 +23,14 @@ const Navbar = () => {
       <ul>
         <Link href="/About">
           <li>
-            <a className={router.pathname === "/About" ? "active" : ""}>
+            <a className={router.pathname == "/About" ? styles.active : ""}>
               About
             </a>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a className={router.pathname === "/" ? "active" : ""}>Cards</a>
+            <a className={router.pathname == "/" ? styles.active : ""}>Cards</a>
           </li>
         </Link>
         <Link href="https://github.com/Biplo12/next-immutable-app">

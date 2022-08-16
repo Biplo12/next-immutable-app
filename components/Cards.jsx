@@ -22,7 +22,7 @@ const Cards = ({ newData }) => {
                   src={d.image_url}
                   width="300px"
                   height="400px"
-                  alt="card image"
+                  alt="card"
                 />
               )}
               <h2>{!d.name ? "Undefined" : d.name}</h2>
@@ -39,6 +39,7 @@ const Cards = ({ newData }) => {
                           src={cardDetails?.image}
                           width="250px"
                           height="350px"
+                          alt="card"
                         />
                       )}
                     </div>
